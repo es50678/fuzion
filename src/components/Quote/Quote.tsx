@@ -14,13 +14,13 @@ const Author = styled.h3<Pick<Props, 'backgroundColor'>>`
 `;
 
 const Wrapper = styled.section`
-  padding: 4em;
+  padding: 25px;
   background: papayawhip;
 `;
 
-export default function Quote({ author, quoteContent, backgroundColor, onClick }: Props) {
+export default function Quote({ author, quoteContent, backgroundColor, onClick, className }: Props) {
   return (
-    <Wrapper>
+    <Wrapper className={className || ""}>
       <QuoteContent>
         "{quoteContent}"
       </QuoteContent>
@@ -39,6 +39,7 @@ Quote.propTypes = {
   backgroundColor: PropTypes.string,
   onClick: PropTypes.func,
   quoteContent: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Quote.defaultProps = {
